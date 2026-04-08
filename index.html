@@ -14,6 +14,7 @@
       position:sticky; top:0; background:#1b5e20; padding:15px;
       display:flex; justify-content:center; gap:25px; z-index:1000;
       box-shadow:0 2px 10px rgba(0,0,0,0.1);
+      flex-wrap:wrap;
     }
     nav a {
       color:white; text-decoration:none; font-weight:500;
@@ -26,10 +27,11 @@
     p { line-height:1.7; }
 
     .hero {
-      height:100vh;
+      min-height:100vh;
       background:url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6') center/cover no-repeat;
       display:flex; align-items:center; justify-content:center;
       text-align:center; color:white;
+      padding:40px 20px;
     }
     .hero-content {
       background:rgba(0,0,0,0.6);
@@ -37,18 +39,12 @@
       max-width:700px;
     }
 
-    .typing {
+    .typing-cursor {
       border-right:3px solid white;
-      white-space:nowrap;
-      overflow:hidden;
-      width:0;
-      animation:typing 4s steps(40, end) forwards, blink 0.8s infinite;
+      animation:blink 0.8s infinite;
+      padding-right:5px;
     }
 
-    @keyframes typing {
-      from { width:0 }
-      to { width:100% }
-    }
     @keyframes blink {
       50% { border-color:transparent }
     }
@@ -97,6 +93,13 @@
     }
 
     html { scroll-behavior:smooth; }
+
+    @media (max-width: 768px) {
+      .image-section { grid-template-columns:1fr; }
+      section { padding:50px 15px; }
+      h1 { font-size:22px; }
+      h2 { font-size:20px; }
+    }
   </style>
 </head>
 <body>
@@ -112,7 +115,7 @@
 
 <section id="home" class="hero">
   <div class="hero-content">
-    <h1 class="typing">Climate Change & Small-Scale Farming</h1>
+    <h1 id="typing" class="typing-cursor"></h1>
     <p>This website presents my research on the impact of climate change on small-scale farmers in South Africa.</p>
     <a href="#problem"><button class="btn">Explore Research</button></a>
   </div>
@@ -174,13 +177,28 @@
 </section>
 
 <footer>
-  <p>Contact: pennypenelopeokay@gmail.com</p>
+ <p>Contact: pennypenelopeokay@gmail.com </p>
   <p>© 2026 Climate Research Project</p>
 </footer>
 
 <script>
-  const cards = document.querySelectorAll('.card');
+  // PERFECT typing animation (no cutoff issues)
+  const text = "Climate Change & Small-Scale Farming";
+  const el = document.getElementById("typing");
+  let i = 0;
 
+  function type() {
+    if (i < text.length) {
+      el.textContent += text.charAt(i);
+      i++;
+      setTimeout(type, 50);
+    }
+  }
+
+  type();
+
+  // scroll animation
+  const cards = document.querySelectorAll('.card');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -189,9 +207,7 @@
     });
   });
 
-  cards.forEach(card => {
-    observer.observe(card);
-  });
+  cards.forEach(card => observer.observe(card));
 </script>
 
 </body>
