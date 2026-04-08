@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Climate Change & Small-Scale Farming</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
+    body { background:#f4f7f6; color:#333; }
+
+    nav {
+      position:sticky; top:0; background:#1b5e20; padding:15px;
+      display:flex; justify-content:center; gap:25px; z-index:1000;
+      box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    }
+    nav a {
+      color:white; text-decoration:none; font-weight:500;
+      transition:0.3s;
+    }
+    nav a:hover { color:#a5d6a7; }
+
+    section { padding:80px 20px; max-width:1100px; margin:auto; }
+    h1, h2 { margin-bottom:20px; color:#1b5e20; }
+    p { line-height:1.7; }
+
+    .hero {
+      height:100vh;
+      background:url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6') center/cover no-repeat;
+      display:flex; align-items:center; justify-content:center;
+      text-align:center; color:white;
+    }
+    .hero-content {
+      background:rgba(0,0,0,0.6);
+      padding:40px; border-radius:15px;
+      max-width:700px;
+    }
+
+    .typing {
+      border-right:3px solid white;
+      white-space:nowrap;
+      overflow:hidden;
+      width:0;
+      animation:typing 4s steps(40, end) forwards, blink 0.8s infinite;
+    }
+
+    @keyframes typing {
+      from { width:0 }
+      to { width:100% }
+    }
+    @keyframes blink {
+      50% { border-color:transparent }
+    }
+
+    .btn {
+      margin-top:20px; padding:12px 25px;
+      background:#4caf50; color:white; border:none;
+      cursor:pointer; border-radius:30px;
+      transition:0.3s;
+    }
+    .btn:hover { background:#2e7d32; transform:scale(1.05); }
+
+    .grid {
+      display:grid; gap:25px;
+      grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+    }
+
+    .card {
+      background:white; padding:25px;
+      border-radius:15px; box-shadow:0 4px 15px rgba(0,0,0,0.08);
+      transition:0.4s;
+      opacity:0; transform:translateY(40px);
+    }
+    .card.show {
+      opacity:1; transform:translateY(0);
+    }
+    .card:hover { transform:translateY(-8px); }
+
+    .icon {
+      font-size:30px; color:#4caf50; margin-bottom:10px;
+    }
+
+    .image-section {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+      align-items:center;
+    }
+    .image-section img {
+      width:100%; border-radius:10px;
+    }
+
+    footer {
+      text-align:center; padding:20px;
+      background:#1b5e20; color:white;
+    }
+
+    html { scroll-behavior:smooth; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#problem">The Problem</a>
+  <a href="#research">Research Findings</a>
+  <a href="#stakeholders">Stakeholders</a>
+  <a href="#solutions">Solutions</a>
+  <a href="#journey">My Journey</a>
+</nav>
+
+<section id="home" class="hero">
+  <div class="hero-content">
+    <h1 class="typing">Climate Change & Small-Scale Farming</h1>
+    <p>This website presents my research on the impact of climate change on small-scale farmers in South Africa.</p>
+    <a href="#problem"><button class="btn">Explore Research</button></a>
+  </div>
+</section>
+
+<section id="problem" class="image-section">
+  <div>
+    <h2>The Problem</h2>
+    <p>Small-scale farmers in South Africa are facing serious challenges due to climate change. Changes in rainfall patterns, prolonged droughts, and rising temperatures are disrupting farming activities.</p>
+    <p>Limited access to irrigation, funding, and modern technology makes adaptation difficult, leading to food insecurity and income loss.</p>
+  </div>
+  <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b">
+</section>
+
+<section id="research">
+  <h2>Research Findings</h2>
+  <div class="grid">
+    <div class="card">
+      <i class="fas fa-cloud-sun icon"></i>
+      <h3>Primary Research</h3>
+      <p>Unpredictable weather, drought, and reduced yields reported by farmers.</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-chart-line icon"></i>
+      <h3>Secondary Research</h3>
+      <p>Climate change is increasing temperatures and variability, affecting farmers severely.</p>
+    </div>
+  </div>
+</section>
+
+<section id="stakeholders">
+  <h2>Stakeholders</h2>
+  <div class="grid">
+    <div class="card"><i class="fas fa-users icon"></i> Farmers</div>
+    <div class="card"><i class="fas fa-building icon"></i> Government</div>
+    <div class="card"><i class="fas fa-seedling icon"></i> Agricultural Officers</div>
+    <div class="card"><i class="fas fa-coins icon"></i> Financial Institutions</div>
+    <div class="card"><i class="fas fa-flask icon"></i> Researchers</div>
+    <div class="card"><i class="fas fa-truck icon"></i> Suppliers</div>
+    <div class="card"><i class="fas fa-home icon"></i> Communities</div>
+  </div>
+</section>
+
+<section id="solutions">
+  <h2>Proposed Solutions</h2>
+  <div class="grid">
+    <div class="card"><i class="fas fa-tint icon"></i> Improve irrigation systems</div>
+    <div class="card"><i class="fas fa-hand-holding-usd icon"></i> Financial support</div>
+    <div class="card"><i class="fas fa-chalkboard-teacher icon"></i> Farmer training</div>
+    <div class="card"><i class="fas fa-leaf icon"></i> Climate-smart agriculture</div>
+  </div>
+</section>
+
+<section id="journey">
+  <h2>My Learning Journey</h2>
+  <div class="card">
+    <p>Through this project, I gained a deeper understanding of climate change and agriculture. I learned how to analyze stakeholders and develop real-world solutions.</p>
+  </div>
+</section>
+
+<footer>
+  <p>Contact: pennypenelopeokay@gmail.com</p>
+  <p>© 2026 Climate Research Project</p>
+</footer>
+
+<script>
+  const cards = document.querySelectorAll('.card');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  });
+
+  cards.forEach(card => {
+    observer.observe(card);
+  });
+</script>
+
+</body>
+</html>
